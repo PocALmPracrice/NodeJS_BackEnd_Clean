@@ -3,7 +3,7 @@ name: CI_NodeJS_BackEnd
 on:
   push:
     branches:
-      - feature_branch
+      - main
 
 jobs:
   build:
