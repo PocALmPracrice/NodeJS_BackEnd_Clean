@@ -70,7 +70,7 @@ jobs:
    notify-success:
     name: Send Slack Notification - Success
     runs-on: ubuntu-latest
-    needs: [snyk,ci, static-code-analysis,trivy-scan ]
+    needs: [snyk,ci, static-code-analysis,trivy-scan, cache-dependencies,jfrog ]
     if: ${{ success() }}
     steps:
       - name: Send notification on Slack using Webhooks - Success
@@ -86,7 +86,7 @@ jobs:
    notify-failure:
     name: Send Slack Notification - Failure
     runs-on: ubuntu-latest
-    needs: [snyk,ci, static-code-analysis,trivy-scan ]
+    needs: [snyk,ci, static-code-analysis,trivy-scan, cache-dependencies,jfrog  ]
     if: ${{ failure() }}
     steps:
       - name: Send notification on Slack using Webhooks - Failure
